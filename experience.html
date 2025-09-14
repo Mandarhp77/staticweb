@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Experience - Web Bucket</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/assets/img/CTfevicon.jpg" rel="icon">
+  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <style>
+    /* Custom CSS to match your original design */
+    :root {
+      --primary-color: #3498db;
+      --secondary-color: #2c3e50;
+      --accent-color: #e74c3c;
+      --text-color: #333;
+      --light-bg: #f8f9fa;
+      --section-bg: #f4f4f4;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    /* Header Styles */
+    #header {
+      background: #fff;
+      transition: all 0.5s;
+      z-index: 997;
+      height: 70px;
+      box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    #header .logo h1 {
+      font-size: 28px;
+      margin: 0;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    #header .logo h1 a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    /* Navigation */
+    .navbar ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      list-style: none;
+      align-items: center;
+    }
+
+    .navbar li {
+      position: relative;
+    }
+
+    .navbar a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 15px;
+      font-size: 14px;
+      color: var(--secondary-color);
+      white-space: nowrap;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .navbar a:hover,
+    .navbar .active {
+      color: var(--primary-color);
+    }
+
+    /* Section Styles */
+    .section-bg {
+      background-color: var(--section-bg);
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--secondary-color);
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .section-title h2:after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: var(--primary-color);
+      bottom: 0;
+      left: calc(50% - 40px);
+    }
+
+    /* Experience Card Styles */
+    .experience-card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border-left: 5px solid var(--primary-color);
+    }
+
+    .experience-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .experience-header {
+      border-bottom: 2px solid #eee;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+    }
+
+    .job-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--secondary-color);
+      margin-bottom: 5px;
+    }
+
+    .company-name {
+      font-size: 18px;
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .duration {
+      color: #666;
+      font-style: italic;
+    }
+
+    .experience-content ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .experience-content li {
+      margin-bottom: 15px;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .experience-content li:before {
+      content: "▶";
+      color: var(--primary-color);
+      position: absolute;
+      left: 0;
+    }
+
+    /* Project Card Styles */
+    .project-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 3px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      border-top: 4px solid var(--accent-color);
+    }
+
+    .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .project-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--secondary-color);
+      margin-bottom: 15px;
+    }
+
+    .project-meta {
+      margin-bottom: 15px;
+    }
+
+    .project-meta strong {
+      color: var(--primary-color);
+    }
+
+    .project-links a {
+      color: var(--primary-color);
+      text-decoration: none;
+      margin-right: 15px;
+      font-weight: 500;
+    }
+
+    .project-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    #footer {
+      background: var(--secondary-color);
+      color: #fff;
+      padding: 20px 0;
+      margin-top: 50px;
+    }
+
+    .back-to-top {
+      position: fixed;
+      visibility: hidden;
+      opacity: 0;
+      right: 15px;
+      bottom: 15px;
+      z-index: 998;
+      background: var(--primary-color);
+      width: 40px;
+      height: 40px;
+      border-radius: 50px;
+      transition: all 0.4s;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .back-to-top.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        position: static;
+      }
+      
+      .mobile-nav-toggle {
+        color: var(--primary-color);
+        font-size: 28px;
+        cursor: pointer;
+        display: block;
+        line-height: 0;
+        transition: 0.5s;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <div class="logo me-auto">
+        <h1><a href="">Mandar's Web Bucket</a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto" href="index.html">Home</a></li>
+          <li><a class="nav-link scrollto" href="edu.html">Education</a></li>
+          <li><a class="nav-link scrollto active" href="experience.html">Experience</a></li>
+          <li><a class="nav-link scrollto" href="proj.html">Projects</a></li>
+          <li><a class="nav-link scrollto" href="proj_img.html">Project Images</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header>
+
+  <br><br><br>
+
+  <!-- ======= Professional Experience Section ======= -->
+  <section id="experience" class="section-bg">
+    <div class="container">
+      <div class="section-title">
+        <h2>Professional Experience</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="experience-card">
+            <div class="experience-header">
+              <div class="job-title">Operations Analyst & Quality Analyst</div>
+              <div class="company-name">Zerebral IT Solutions, Baner</div>
+              <div class="duration">September 2023 - Present</div>
+            </div>
+            <div class="experience-content">
+              <ul>
+                <li><strong>Data Extraction & Processing:</strong> Successfully scraped and structured car inventory data from the automotive websites across the US and Canada, capturing critical vehicle specifications, pricing, and dealer information for business intelligence purposes.</li>
+                <li><strong>Business Intelligence Reporting:</strong> Generated comprehensive business reports from data warehouse systems, delivering actionable insights through daily, monthly, and yearly analytics for the UK Data Analyst project, supporting strategic decision-making.</li>
+                <li><strong>Workflow Automation:</strong> Designed and implemented Apache Airflow DAGs to automate end-to-end data export processes, ensuring on-time delivery of client data while reducing manual intervention</li>
+                <li><strong>Machine Learning Implementation:</strong> Managed Website Classification Crawler using trained models to identify and predict new automotive dealer websites, improving data source discovery</li>
+                <li><strong>Data Quality Management:</strong> Developed Python-based automated validation scripts to identify and resolve data quality issues, improving overall data consistency reducing manual QA time.</li>
+                <li><strong>Process Optimization:</strong> Created Python automation solutions for repetitive manual tasks, streamlining workflows and achieving efficiency improvement across multiple business processes.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Key Projects Section ======= -->
+  <section id="key-projects" class="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Key Professional Projects</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="project-card">
+            <div class="project-title">US-UK Data Analysis Platform</div>
+            <div class="project-meta">
+              <p><strong>Description:</strong> Architected and delivered comprehensive business intelligence reports from multi-terabyte data warehouse, providing critical insights across daily, monthly, and yearly timelines. Supported data-driven strategies for international market analysis.</p>
+              <p><strong>Technologies:</strong> Python, SQL, Data Warehouse, Business Intelligence</p>
+              <p><strong>Impact:</strong> Enabled strategic decision-making through automated reporting pipeline</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="project-card">
+            <div class="project-title">Intelligent Website Classification System</div>
+            <div class="project-meta">
+              <p><strong>Description:</strong> Developed an advanced Python solution leveraging ANN-based text classification models to analyze business domains and predict automotive-related websites. Achieved accuracy in identifying car dealership homepages.</p>
+              <p><strong>Technologies:</strong> Python, Machine Learning, ANN, Text Classification, Web Scraping</p>
+              <p><strong>Impact:</strong> Improved data source discovery through automated website identification</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="project-card">
+            <div class="project-title">Business Field Standardization</div>
+            <div class="project-meta">
+              <p><strong>Description:</strong> Led the configuration and standardization of critical business fields including certified vehicle classifications and dealer categorizations. Ensured accurate data mapping alignment with business logic requirements.</p>
+              <p><strong>Technologies:</strong> Python, Data Processing, Business Logic Implementation</p>
+              <p><strong>Impact:</strong> Achieved data mapping accuracy and improved data consistency</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="project-card">
+            <div class="project-title">Neovin Support Automation</div>
+            <div class="project-meta">
+              <p><strong>Description:</strong> Engineered automated VIN data analysis system using Python scripts to identify vehicle equipment details, options, and packages. Improved process efficiency by 70% while enhancing data accuracy through multi-source validation.</p>
+              <p><strong>Technologies:</strong> Python, Data Analysis, Multi-source Validation, Automation</p>
+              <p><strong>Impact:</strong> 70% efficiency improvement in VIN data processing</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Personal Projects Section ======= -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container d-md-flex py-4">
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Mandarhp77</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          Designed by <a href="">Mandar Patil</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Back to top button
+    let backtotop = document.querySelector('.back-to-top');
+    if (backtotop) {
+      const toggleBacktotop = () => {
+        if (window.scrollY > 100) {
+          backtotop.classList.add('active');
+        } else {
+          backtotop.classList.remove('active');
+        }
+      }
+      window.addEventListener('load', toggleBacktotop);
+      document.addEventListener('scroll', toggleBacktotop);
+    }
+
+    // Mobile nav toggle
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    if (mobileNavToggle) {
+      mobileNavToggle.addEventListener('click', function() {
+        document.querySelector('#navbar').classList.toggle('navbar-mobile');
+        this.classList.toggle('bi-list');
+        this.classList.toggle('bi-x');
+      });
+    }
+  </script>
+
+</body>
+</html>
